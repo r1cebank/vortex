@@ -1,0 +1,15 @@
+{
+    "telegram": {
+        "token": "TELEGRAM_BOT_TOKEN",
+        "whitelist": "TELEGRAM_WHITELIST"
+    },
+    "loglevel": "LOG_LEVEL",
+    "storage": {
+        "directory": "STORAGE_DIR"
+    },
+    "plugins": {
+        "github": {
+            "token": "GITHUB_USER_TOKEN"
+        }
+    }
+}

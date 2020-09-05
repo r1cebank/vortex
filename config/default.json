@@ -1,0 +1,15 @@
+{
+    "telegram": {
+        "token": "",
+        "whitelist": ""
+    },
+    "loglevel": "debug",
+    "storage": {
+        "directory": "./db"
+    },
+    "plugins": {
+        "github": {
+            "token": ""
+        }
+    }
+}
