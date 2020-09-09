@@ -7,9 +7,6 @@
     "storage": {
         "directory": "./db"
     },
-    "plugins": {
-        "github": {
-            "token": ""
-        }
-    }
+    "activeplugins": "auth,github,instapaper",
+    "plugins": {}
 }

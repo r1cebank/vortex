@@ -6,11 +6,15 @@ const config = require('config');
 const { plugins, register } = require('./plugins');
 const { middleware } = require('./cqHandler');
 const Singleton = require('./singleton');
+const logger = require('./logger');
 
 const sharedInstance = Singleton.getInstance();
 
 // Create the telegraf bot instance
 const bot = new Telegraf(config.get('telegram.token'));
+
+// Active plugin lists
+const enabledPlugins = config.get('activeplugins').split(',');
 
 // Store the bot instance in the singleton
 sharedInstance.bot = bot;
@@ -25,7 +29,11 @@ bot.use((new LocalSession({ database: path.join(config.get('storage.directory'),
 
 // Register each plugin
 plugins.forEach((plugin) => {
-    register(bot, plugin);
+    if (enabledPlugins.includes(plugin.name)) {
+        register(bot, plugin);
+    } else {
+        logger.debug(`${plugin.name} is not loaded since its not enabled in config: [${enabledPlugins}]`);
+    }
 });
 
 // bot.start((ctx) => ctx.reply('Welcome'))

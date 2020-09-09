@@ -7,9 +7,14 @@
     "storage": {
         "directory": "STORAGE_DIR"
     },
+    "activeplugins": "ACTIVE_PLUGINS",
     "plugins": {
         "github": {
             "token": "GITHUB_USER_TOKEN"
+        },
+        "instapaper": {
+            "username": "INSTAPAPER_USER",
+            "password": "INSTAPAPER_PASS"
         }
     }
 }

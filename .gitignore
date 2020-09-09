@@ -105,3 +105,6 @@ dist
 
 # Local sesions
 db
+
+# Env file
+.envrc

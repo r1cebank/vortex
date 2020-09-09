@@ -1,5 +1,6 @@
 const auth = require('./auth');
 const github = require('./github');
+const instapaper = require('./instapaper');
 const logger = require('../logger');
 
 const register = (bot, plugin) => {
@@ -20,7 +21,8 @@ const register = (bot, plugin) => {
 module.exports = {
     plugins: [
         auth,
-        github
+        github,
+        instapaper
     ],
     register
 };
